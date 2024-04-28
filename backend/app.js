@@ -1,26 +1,26 @@
 const cookieSession = require("cookie-session");
 const IPFS=require('ipfs-http-client')
 const express = require("express");
-const auth=require('../backend/middlewares/auth')
+const auth=require('./middlewares/auth')
 const cors = require("cors");
 
 const passportSetup = require("./passport");
 const passport = require("passport");
 const authRoute = require("./routes/auth");
 const app = express();
-const fileUpload=require('../backend/routes/fileupload')
+const fileUpload=require('./routes/fileupload')
 const adminRoute=require('./routes/admin')
 require('dotenv').config()
 
 
-const errorMiddleware=require('../backend/middlewares/error')
+const errorMiddleware=require('./middlewares/error')
 if (process.env.NODE_ENV !== "PRODUCTION") {
   require("dotenv").config({ path: __dirname+"/config/config.env"});
 }
 
 const PORT=process.env.PORT||7000
 //Database connectivity
-const connectDataBase=require('../backend/config/databBase');
+const connectDataBase=require('./config/databBase');
 
 connectDataBase();
 

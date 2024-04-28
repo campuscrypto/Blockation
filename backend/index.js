@@ -10,6 +10,7 @@ const authRoute = require("./routes/auth");
 const app = express();
 const fileUpload=require('../backend/routes/fileupload')
 const adminRoute=require('./routes/admin')
+require('dotenv').config()
 
 
 const errorMiddleware=require('../backend/middlewares/error')
@@ -70,6 +71,6 @@ app.get('/',(req,res)=>{
 app.use(errorMiddleware)
 
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT, () => {
   console.log(`Server is running at the port ${PORT}`);
 });

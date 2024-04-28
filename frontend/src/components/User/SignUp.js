@@ -10,7 +10,7 @@ const SignUp = () => {
   const dispatch=useDispatch();
   const navigate=useNavigate();
   const googlehandler=()=>{
-    window.open(`http://localhost:7000/auth/google`)
+    window.open(`https://blockation-8u9r.onrender.com/auth/google`)
   }
   const [confirmPassword, setconfirmPassword] = useState("")
   const registerSubmit = (e) => {

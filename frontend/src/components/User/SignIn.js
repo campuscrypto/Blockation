@@ -19,7 +19,7 @@ const SignIn = () => {
   }
 
   const opengoogleLogin=()=>{
-    window.open('http://localhost:7000/auth/google')
+    window.open('https://blockation-8u9r.onrender.com/auth/google')
   }
   useEffect(() => {
   if(isAuthenticated){

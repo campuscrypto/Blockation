@@ -1,7 +1,7 @@
 const ErrorHandler = require("../utils/errorhander")
 
 function auth(req, res, next) {
-    
+
     if(req.user) {
 
        

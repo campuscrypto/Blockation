@@ -26,8 +26,8 @@ router.route('/login').post(postLogin)
 
 
 //details
-router.route('/me').get(getUserDetails)
+router.route('/me').get(auth,getUserDetails)
 //uploaded file details
-router.route('/me/uploadedfiles').get(getUploadedFileDetails)
+router.route('/me/uploadedfiles').get(auth,getUploadedFileDetails)
 
 module.exports = router

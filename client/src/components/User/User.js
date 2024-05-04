@@ -5,6 +5,15 @@ import Loader from "../Loader/Loader"
 function User() {
      const dispatch=useDispatch();
      const {user,loading,isAuthenticated}=useSelector(state=>state.user);
+     const handleUploadFiles = (e) => {
+      e.preventDefault(); 
+      window.location.href = "/file/uploadFile";
+    };
+  
+    const handleGetFiles = (e) => {
+      e.preventDefault();
+      window.location.href = "/file/getAllFiles";
+    };
   
     
   return (
@@ -52,18 +61,14 @@ function User() {
                 <p class="my-2 text-md"></p>
                 <div class="flex justify-center ">
                   <div class="py-4 pr-5">
-                    <a href="file/uploadFile">
-                      <button class="bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded-xl">
+                      <button onClick={handleUploadFiles} class="bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded-xl">
                        Upload Files
                       </button>
-                    </a>
                   </div>
                   <div class="py-4">
-                    <a href="/file/getAllFiles">
-                      <button class="bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded-xl">
+                      <button onClick={handleGetFiles} class="bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded-xl">
                         Get Your Uploaded Files
                       </button>
-                    </a>
                   </div>
                 </div>
                 <p class="text-sm">

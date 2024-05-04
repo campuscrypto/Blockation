@@ -20,8 +20,8 @@ function App() {
 const {isAuthenticated}=useSelector(state=>state.user);
 
   React.useEffect(()=>{
-store.dispatch(laodUser())
-  },[])
+    store.dispatch(laodUser())
+  },[isAuthenticated])
 
   return (
 <>
